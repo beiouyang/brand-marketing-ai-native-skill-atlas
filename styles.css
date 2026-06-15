@@ -1240,6 +1240,13 @@ h1::after {
   font-size: clamp(20px, 2.8vw, 42px);
 }
 
+.architecture-page #rule-layer h2,
+.architecture-page #orchestration-layer h2,
+.architecture-page #application-layer h2,
+.architecture-page #execution-layer h2 {
+  font-size: clamp(20px, 2.8vw, 42px);
+}
+
 .architecture-page .case-layer .layer-head h2 {
   font-size: clamp(18px, 2.5vw, 36px);
 }
