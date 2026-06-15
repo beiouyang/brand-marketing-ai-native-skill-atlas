@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>品牌与营销 AI-Native 六层架构</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23050505'/%3E%3Cpath d='M16 44V18h11c6 0 10 3 10 8 0 3-2 6-5 7 4 1 7 4 7 9 0 6-5 10-12 10H16Zm7-16h4c3 0 5-1 5-4 0-2-2-4-5-4h-4v8Zm0 19h5c4 0 6-2 6-5s-2-5-6-5h-5v10Z' fill='%23DA205A'/%3E%3Cpath d='M42 18h6v26h-6z' fill='%2355E6D1'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="architecture-page">
+  <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <symbol id="hint-arrow-symbol" viewBox="0 0 22.088 22.448">
+      <g transform="matrix(0.7071067811865477,-0.7071067811865475,0.7071067811865475,0.7071067811865477,-4.001771347309194,4.14286933981009)">
+        <path d="M0 0L2.4400001 0L2.4400001 2.4400001L0 2.4400001L0 0ZM2.4400001 2.4400001L4.8800001 2.4400001L4.8800001 4.8800001L2.4400001 4.8800001L2.4400001 2.4400001ZM4.8800001 4.8800001L7.3210001 4.8800001L7.3210001 7.3200002L4.8800001 7.3200002L4.8800001 4.8800001ZM7.3210001 7.3200002L9.7609997 7.3200002L9.7609997 9.7600002L7.3210001 9.7600002L7.3210001 7.3200002ZM4.8800001 9.7600002L7.3210001 9.7600002L7.3210001 12.2L4.8800001 12.2L4.8800001 9.7600002ZM2.4400001 12.2L4.8800001 12.2L4.8800001 14.64L2.4400001 14.64L2.4400001 12.2ZM0 14.793L0 17.08L0 17.233L2.4400001 17.233L2.4400001 17.08L2.4400001 14.793L2.4400001 14.64L0 14.64L0 14.793Z" transform="translate(3, 6.902)" fill="currentColor"></path>
+      </g>
+    </symbol>
+  </svg>
+  <canvas id="donut-canvas" aria-hidden="true"></canvas>
+  <div class="ambient ambient-top" aria-hidden="true"></div>
+  <div class="ambient ambient-bottom" aria-hidden="true"></div>
+
+  <div class="shell">
+    <header class="topbar" aria-label="站点导航">
+      <div class="brand-cluster" aria-label="站点标识">
+        <a class="mark-symbol" href="#overview" aria-label="返回概览">BM</a>
+        <span class="mark-copy">
+          <span class="mark-title-row">
+            <a class="mark-title" href="#overview">AI-Native Skill Atlas</a>
+          </span>
+          <nav class="mark-links" aria-label="页面切换">
+            <a href="./index.html">Home</a>
+            <span aria-hidden="true">/</span>
+            <a href="./architecture.html" aria-current="page">Intro</a>
+          </nav>
+        </span>
+      </div>
+      <nav class="nav-links nav-links-scroll" aria-label="分层目录">
+        <a href="#overview">概览</a>
+        <a href="#demand-layer">需求层</a>
+        <a href="#orchestration-layer">编排层</a>
+        <a href="#rule-layer-arch">规则层</a>
+        <a href="#capability-layer">能力层</a>
+        <a href="#execution-layer">执行层</a>
+        <a href="#qa-layer">质检闭环</a>
+        <a href="#governance">治理</a>
+        <a href="#case-study">编排案例</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero hero-compact" id="overview">
+        <div class="hero-copy">
+          <h1 id="type-title" data-text="品牌与营销&#10;AI-Native 六层架构"></h1>
+          <p class="subtitle">从需求入口到质检闭环，把品牌营销设计团队升级为规范驱动、Skill-first、人机协作的 AI-Native 组织操作系统</p>
+        </div>
+
+        <div class="flow-stack" aria-label="六层主链路">
+          <div class="flow-node" data-layer="1"><span>① 需求层</span><small>结构化 / 开放式</small></div>
+          <div class="flow-arrow" aria-hidden="true"></div>
+          <div class="flow-node" data-layer="2"><span>② 编排层</span><small>路由 / 卡点 / 派单</small></div>
+          <div class="flow-arrow" aria-hidden="true"></div>
+          <div class="flow-node flow-node-support" data-layer="3"><span>③ 规则层</span><small>Wiki / 知识库 / 护栏</small></div>
+          <div class="flow-arrow flow-arrow-support" aria-hidden="true"></div>
+          <div class="flow-node flow-node-support" data-layer="4"><span>④ 能力层</span><small>工作流 / Skill / 工具</small></div>
+          <div class="flow-arrow" aria-hidden="true"></div>
+          <div class="flow-node" data-layer="5"><span>⑤ 执行层</span><small>人类 + 专家 Copilot</small></div>
+          <div class="flow-arrow" aria-hidden="true"></div>
+          <div class="flow-node" data-layer="6"><span>⑥ 质检闭环</span><small>验收 / 回流 / 升格</small></div>
+        </div>
+
+        <p class="flow-caption">主链路：需求 → 编排 → 执行 → 质检闭环 · 规则 + 能力持续支撑</p>
+
+        <div class="principle-grid">
+          <article class="principle-card">
+            <p class="eyebrow">Skill 策略</p>
+            <h3>Skill-first</h3>
+            <p>标准 Skill → 组合 → sandbox adhoc（需授权）</p>
+          </article>
+          <article class="principle-card">
+            <p class="eyebrow">验证治理</p>
+            <h3>三权分立</h3>
+            <p>规则定底线 · 编排定流程 · Skill 定检查项 · 人终审</p>
+          </article>
+          <article class="principle-card">
+            <p class="eyebrow">自治等级</p>
+            <h3>L1 → L3 渐进</h3>
+            <p>开放式人主导 · 结构化 Copilot 先执行 · 人验收</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="layer" id="demand-layer" data-layer="demand">
+        <div class="layer-head">
+          <p class="eyebrow">Demand Layer</p>
+          <h2>需求层 · 入口</h2>
+          <p class="layer-summary">结构化需求走自动化，开放式需求走人机共创</p>
+        </div>
+        <div class="domain-grid rule-grid" id="demand-layer-grid"></div>
+      </section>
+
+      <section class="layer" id="orchestration-layer" data-layer="orchestration">
+        <div class="layer-head">
+          <p class="eyebrow">Orchestration Layer</p>
+          <h2>编排层 · 调度中枢</h2>
+          <p class="layer-summary">决定谁做、怎么做、何时必须人审</p>
+        </div>
+        <div class="domain-grid rule-grid" id="orchestration-layer-grid"></div>
+      </section>
+
+      <section class="layer" id="rule-layer-arch" data-layer="rule">
+        <div class="layer-head">
+          <p class="eyebrow">Rule Layer</p>
+          <h2>规则层 · 内核</h2>
+          <p class="layer-summary">Design Wiki + 知识库 + 品牌护栏，AI-native 的地基</p>
+        </div>
+        <div class="domain-grid rule-grid" id="rule-layer-arch-grid"></div>
+      </section>
+
+      <section class="layer" id="capability-layer" data-layer="capability">
+        <div class="layer-head">
+          <p class="eyebrow">Capability Layer</p>
+          <h2>能力层 · 驱动</h2>
+          <p class="layer-summary">通用设计工作流 + Skill + 工具链</p>
+        </div>
+        <div class="domain-grid rule-grid" id="capability-layer-grid"></div>
+      </section>
+
+      <section class="layer" id="execution-layer" data-layer="execution">
+        <div class="layer-head">
+          <p class="eyebrow">Execution Layer</p>
+          <h2>执行层 · 进程</h2>
+          <p class="layer-summary">人类设计师 + 虚拟专家 Copilot，按自治等级协作</p>
+        </div>
+        <div class="domain-grid rule-grid" id="execution-layer-grid"></div>
+      </section>
+
+      <section class="layer" id="qa-layer" data-layer="qa">
+        <div class="layer-head">
+          <p class="eyebrow">QA Loop</p>
+          <h2>质检闭环 · 进化</h2>
+          <p class="layer-summary">验收 → 度量 → 回流，让系统越用越 native</p>
+        </div>
+        <div class="domain-grid rule-grid" id="qa-layer-grid"></div>
+      </section>
+
+      <section class="layer" id="governance" data-layer="governance">
+        <div class="layer-head">
+          <p class="eyebrow">Governance</p>
+          <h2>治理机制</h2>
+          <p class="layer-summary">Skill 策略 · 验证三权分立 · 每个 Skill 必填验证契约</p>
+        </div>
+        <div class="domain-grid rule-grid" id="governance-grid"></div>
+
+        <div class="validation-matrix">
+          <h3>Skill 验证契约 · 四级模板</h3>
+          <div class="validation-grid">
+            <article class="validation-card">
+              <span class="level-pill level-light">L-轻</span>
+              <h4>归档 / Wiki 同步</h4>
+              <p>命名、目录、版本检查 · 全绿可自动过 · 抽检 10%</p>
+            </article>
+            <article class="validation-card">
+              <span class="level-pill level-medium">M-中</span>
+              <h4>渠道物料 / 矩阵延展</h4>
+              <p>尺寸 token 全量通过 · 客观项全绿 · 首单全审</p>
+            </article>
+            <article class="validation-card">
+              <span class="level-pill level-heavy">H-重</span>
+              <h4>规范 lint / 主 KV 预检</h4>
+              <p>完整 checks · 仅客观子集自动过 · 人审 mandatory</p>
+            </article>
+            <article class="validation-card">
+              <span class="level-pill level-explore">exploratory</span>
+              <h4>KV 探索 / 方向发散</h4>
+              <p>产出 ≥ N 方向 + 预检报告 · 永不自动终审</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="layer case-layer" id="case-study" data-layer="case">
+        <div class="layer-head">
+          <p class="eyebrow">Orchestration Case</p>
+          <h2 id="case-title">App16.0 品牌推广</h2>
+          <p class="layer-summary" id="case-summary"></p>
+        </div>
+
+        <div class="case-meta">
+          <div><span>需求 ID</span><strong id="case-req-id"></strong></div>
+          <div><span>编排模式</span><strong id="case-mode"></strong></div>
+          <div><span>负责人</span><strong id="case-owner"></strong></div>
+          <div><span>周期</span><strong id="case-duration"></strong></div>
+        </div>
+
+        <div class="case-columns">
+          <article class="case-panel">
+            <h3>需求解析</h3>
+            <ul class="case-parse" id="case-parse"></ul>
+          </article>
+          <article class="case-panel">
+            <h3>阶段并行</h3>
+            <div class="phase-grid" id="case-phases"></div>
+          </article>
+        </div>
+
+        <div class="table-wrap">
+          <h3>任务队列 · 编排输出</h3>
+          <table class="case-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>子项</th>
+                <th>执行单元</th>
+                <th>等级</th>
+                <th>卡点</th>
+                <th>依赖</th>
+                <th>截止</th>
+              </tr>
+            </thead>
+            <tbody id="case-tasks"></tbody>
+          </table>
+        </div>
+
+        <article class="case-panel">
+          <h3>Skill Policy 映射</h3>
+          <ul class="skill-map" id="case-skills"></ul>
+        </article>
+      </section>
+
+      <section class="layer roadmap-layer" id="roadmap" data-layer="roadmap">
+        <div class="layer-head">
+          <p class="eyebrow">Roadmap</p>
+          <h2>渐进路线 · 6–12 个月</h2>
+          <p class="layer-summary">规则先行 → 单点 Copilot → 编排度量 → 多专家编组</p>
+        </div>
+        <div class="roadmap-grid" id="roadmap-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal" id="detail-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <article class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" data-close aria-label="关闭详情">×</button>
+      <div class="modal-media" aria-label="详情占位">
+        <div class="media-grid" aria-hidden="true"></div>
+        <span id="modal-media-placeholder">Architecture Detail</span>
+      </div>
+      <div class="modal-body">
+        <div class="modal-kicker" id="modal-kicker"></div>
+        <h3 id="modal-title"></h3>
+        <p id="modal-desc"></p>
+        <div class="modal-meta">
+          <span id="modal-status"></span>
+          <span id="modal-downloads"></span>
+        </div>
+        <section>
+          <h4>详细说明</h4>
+          <p id="modal-capability"></p>
+        </section>
+        <section>
+          <h4>关键要点</h4>
+          <p id="modal-impact" class="modal-points"></p>
+        </section>
+        <section>
+          <h4>摘要</h4>
+          <p class="modal-hint-line">
+            <span id="modal-hints"></span>
+            <svg class="hint-arrow modal-hint-arrow" viewBox="0 0 22.088 22.448" aria-hidden="true"><use href="#hint-arrow-symbol"></use></svg>
+          </p>
+        </section>
+      </div>
+    </article>
+  </div>
+
+  <script src="./architecture-data.js"></script>
+  <script src="./architecture.js"></script>
+</body>
+</html>
