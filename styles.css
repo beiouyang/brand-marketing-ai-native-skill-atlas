@@ -526,7 +526,7 @@ h1::after {
 #application-layer h2,
 #execution-layer h2 {
   white-space: nowrap;
-  font-size: clamp(30px, 4.2vw, 58px);
+  font-size: clamp(20px, 2.8vw, 42px);
 }
 
 .domain-grid {
