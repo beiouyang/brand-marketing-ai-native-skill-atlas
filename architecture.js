@@ -71,13 +71,28 @@
 
   function renderRoadmap() {
     const grid = document.getElementById("roadmap-grid");
-    if (!grid) return;
-    grid.innerHTML = data.roadmap.map((item, index) => `
+    const summary = document.getElementById("roadmap-summary");
+    if (!grid || !data.roadmap) return;
+
+    if (summary) {
+      summary.textContent = data.roadmap.subtitle || "";
+    }
+
+    grid.innerHTML = data.roadmap.phases.map((item, index) => `
       <article class="roadmap-card" style="--delay:${index * 0.08}s">
-        <p class="roadmap-phase">${item.phase}</p>
+        <div class="roadmap-card-head">
+          <p class="roadmap-phase">${item.phase}</p>
+          <span class="roadmap-time">${item.time}</span>
+        </div>
         <h4>${item.title}</h4>
-        <span class="roadmap-time">${item.time}</span>
+        <p class="roadmap-goal">${item.goal || ""}</p>
         <ul>${item.items.map((entry) => `<li>${entry}</li>`).join("")}</ul>
+        ${item.deliverables ? `
+          <div class="roadmap-tags">
+            ${item.deliverables.map((tag) => `<span class="roadmap-tag">${tag}</span>`).join("")}
+          </div>
+        ` : ""}
+        ${item.outcome ? `<p class="roadmap-outcome">🎯 ${item.outcome}</p>` : ""}
       </article>
     `).join("");
   }

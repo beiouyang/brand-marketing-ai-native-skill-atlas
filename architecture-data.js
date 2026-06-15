@@ -305,10 +305,66 @@ window.ARCHITECTURE_DATA = {
     ]
   },
 
-  roadmap: [
-    { phase: "Phase 0", time: "1–2 月", title: "规则先行", items: ["Design Wiki 可执行子集", "3–5 类结构化需求模板"] },
-    { phase: "Phase 1", time: "2–4 月", title: "单点 Copilot", items: ["选 1 个高重复场景", "1 工作流 + 1 Skill + 验收标准"] },
-    { phase: "Phase 2", time: "4–6 月", title: "编排 + 度量", items: ["看板增加执行单元字段", "跟踪首稿通过率 / 节省工时"] },
-    { phase: "Phase 3", time: "6–12 月", title: "多专家 Copilot 编组", items: ["按主题部署 Copilot", "结构化需求默认 Agent 初稿"] }
-  ]
+  roadmap: {
+    duration: "6 个月",
+    subtitle: "规则先行 → 单点 Copilot → 编排度量 → 多专家编组",
+    phases: [
+      {
+        phase: "Phase 0",
+        time: "第 1 月",
+        title: "规则先行",
+        goal: "把隐性规范外化为可执行规则，建立需求入口标准",
+        items: [
+          "Design Wiki 可执行子集：色彩 / 字体 / 1/9 / 资产命名 / 版本号",
+          "3–5 类结构化需求模板：大促延展、App16.0 模块、资产归档、wiki 同步",
+          "验证契约四级模板草案（L-轻 / M-中 / H-重 / exploratory）",
+          "编排层基础字段定义：执行单元、skill_policy、human_gate、fail_actions"
+        ],
+        deliverables: ["规则层 v1", "需求模板包", "验证契约模板"],
+        outcome: "结构化需求可入看板，Skill 有标准可引用"
+      },
+      {
+        phase: "Phase 1",
+        time: "第 2 月",
+        title: "单点 Copilot",
+        goal: "选 1 个高重复场景跑通端到端，验证 Skill-first 可行",
+        items: [
+          "选定试点场景（建议：大促渠道物料批量化 或 规范 lint）",
+          "1 工作流 + 1 Skill + validation_contract v1.0 上线",
+          "L3 小范围试点：1 条真实需求从进入到交付全流程",
+          "建立度量基线：首稿通过率、人机工时比、返工原因标签"
+        ],
+        deliverables: ["试点 Skill v1", "端到端案例 1 条", "度量基线报告"],
+        outcome: "证明 Copilot 可委派，团队有真实体感"
+      },
+      {
+        phase: "Phase 2",
+        time: "第 3–4 月",
+        title: "编排 + 度量",
+        goal: "引入编排层调度，把单点能力升级为可复用流程",
+        items: [
+          "看板增加字段：执行单元、AI 可委派、skill_policy、Mandatory Gate",
+          "跑通 1 个完整编排案例（如 App16.0 品牌推广）",
+          "4 道卡点人审（G1–G4）在真实项目中落地",
+          "质检闭环启动：返工原因结构化 → 回流规则层 / 能力层"
+        ],
+        deliverables: ["编排输出模板", "App16.0 编排案例", "质检回流机制"],
+        outcome: "人机分工可调度，返工可追溯、可优化"
+      },
+      {
+        phase: "Phase 3",
+        time: "第 5–6 月",
+        title: "多专家 Copilot 编组",
+        goal: "按主题部署 Copilot 编组，结构化需求默认 Agent 初稿",
+        items: [
+          "部署 3+ 主题 Copilot：规范 / 大促 / 互动（或工程化）",
+          "结构化需求默认路由 Copilot 先出稿，人只做验收与精修",
+          "Skill 升格机制运行：adhoc 重复 ≥3 次 → 发布正式 Skill",
+          "6 个月复盘：首稿通过率、节省工时、规范偏离率、升格 Skill 数"
+        ],
+        deliverables: ["多 Copilot 编组", "升格 Skill 清单", "6 个月复盘报告"],
+        outcome: "AI-native 工作单元成型，可持续进化"
+      }
+    ]
+  }
 };
